@@ -1,0 +1,236 @@
+.maincontainer{
+    display: flex;
+    position: relative;
+
+}
+.mainheader{
+    width: calc(94%);
+    border-bottom: solid 1px #EAEAEA;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+}
+
+.socials img {
+  transition: opacity 0.2s;
+}
+
+.socials img:hover {
+  opacity: 0.8;
+}
+
+.TextHeaderTwo{
+    font-family: 'Inter', sans-serif; /* font Inter */
+    font-weight: 400;
+    text-decoration: underline;
+    color: #D449D9;
+}
+
+.TextHeaderOne{
+    font-family: 'Inter', sans-serif; /* font Inter */
+    font-weight: 500;
+    font-size: large;
+}
+
+/* Add these styles to your ListArticleAdmin.module.css file */
+
+/* Add these styles to your ListArticleAdmin.module.css file */
+
+.articleContainer {
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  min-height: calc(100vh - 130px); /* Expanded height to fill screen */
+  display: flex;
+  flex-direction: column;
+}
+
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.headerControls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.columnSelect {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  font-size: 14px;
+  min-width: 150px;
+}
+
+.searchInput {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  min-width: 200px;
+}
+
+.addButton {
+  background: #8b5cf6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.addButton:hover {
+  background: #7c3aed;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  flex: 1; /* Take remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+.articleTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  flex: 1;
+}
+
+.articleTable th {
+  background: #f8f9fa;
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+}
+
+.articleTable td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.articleTable tr:hover {
+  background: #f8f9fa;
+}
+
+.titleCell {
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.viewsCell {
+  text-align: left;
+  font-weight: 500;
+  color: #374151;
+  min-width: 80px;
+}
+
+.typeTag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.typeTag.artikel {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.typeTag.program {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.actionButton {
+  background: none;
+  border: 1px solid #ddd;
+  padding: 6px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actionButton:hover {
+  background: #f1f5f9;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto; /* Push to bottom */
+  padding-top: 15px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.paginationBtn {
+  background: none;
+  border: 1px solid #ddd;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.paginationBtn:hover:not(:disabled) {
+  background: #f1f5f9;
+}
+
+.paginationBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.currentPage {
+  background: #8b5cf6;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pageNumber {
+  color: #6b7280;
+  font-size: 14px;
+}

@@ -1,0 +1,314 @@
+.Container {
+  width: 100%;
+}
+
+.noPaddingMain {
+  padding: 0 !important;
+}
+
+.Section1 {
+  position: relative;
+  width: 100%;
+  height: 500px;            /* tinggi fix biar gak aneh */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.Section1 img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* isi penuh tanpa meledak */
+  z-index: 0;
+}
+
+.Section1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1;
+}
+
+.Section1 .HeaderText,
+.Section1 .DescText {
+  position: relative;
+  z-index: 2; /* teks di atas overlay */
+}
+
+.HeaderText,
+.DescText {
+  position: relative; /* biar z-index jalan */
+  z-index: 1;         /* teks di atas overlay */
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+.HeaderText {
+  font-size: 45px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.DescText {
+  font-size: 20px;
+  font-weight: 200; /* paling tipis di Inter */
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-family: 'Inter', sans-serif;
+
+  line-height: 1.8;      /* jarak antar baris lebih renggang */
+  letter-spacing: 0.5px; /* jarak antar huruf tipis */
+}
+
+.Section2{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3% ;
+  padding-bottom: 3%;
+}
+
+.DescText2{
+  color: black;
+  font-size: 20px;
+  font-weight: 300; /* paling tipis di Inter */
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2%;
+  font-family: 'Inter', sans-serif;
+
+  line-height: 1.8;      /* jarak antar baris lebih renggang */
+  letter-spacing: 0.5px; /* jarak antar huruf tipis */
+}
+
+.Section3{
+  display: flex;
+  flex-direction: row;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-left: 10%;
+  padding-right: 10%;
+  background: linear-gradient(
+    to right,
+    #b84fc5 0%,   /* ungu muda lebih cerah di awal */
+    #9c32a1 30%,  /* ungu medium */
+    #87138d 65%,  /* ungu pekat */
+    #4A0F4D 100%  /* deep purple gelap di ujung */
+  );
+  align-items: start;
+  justify-content: center;
+}
+
+.down1{
+  width: 50%;
+}
+
+.Section4{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.Section4 img {
+  max-width: 80%;
+  height: auto;
+  object-fit: contain; /* jangan crop */
+}
+
+
+.Section5{
+  margin-top: 2%;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    to bottom,
+    #4A0F4D 0%,   /* ungu tua */
+    #AB23B3 100%  /* ungu cerah */
+  );
+
+}
+
+.HeaderText2{
+  position: relative; /* biar z-index jalan */
+  z-index: 1;         /* teks di atas overlay */
+  color: black;
+  font-family: 'Inter', sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.HeaderText3{
+  position: relative; /* biar z-index jalan */
+  z-index: 1;         /* teks di atas overlay */
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+  text-align: start;
+}
+
+.LoopColumn {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+
+.Card {
+  background: #000; /* bagian bawah hitam */
+  border-radius: 16px;
+  overflow: hidden;  /* biar image ikut rounded */
+  width: 330px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.Card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.CardImage {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* biar kotak */
+  object-fit: cover;
+}
+
+
+.CardBody {
+  background: #000;
+  color: white;
+  padding: 16px;
+  text-align: center;
+}
+
+.CardJabatan {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #AB23B3; /* ungu aksen */
+  margin-bottom: 6px;
+}
+
+.CardNama {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+.CardLinks {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.CardLinks img {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.CardLinks img:hover {
+  opacity: 0.7;
+}
+
+.loadingWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh; /* cukup tinggi biar cakep */
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #e0c9f7; /* ungu muda */
+  border-top: 6px solid #6a0dad; /* ungu tua */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingText {
+  font-size: 18px;
+  font-weight: 500;
+  color: #6a0dad;
+}
+
+
+@media (max-width: 768px) {
+  .HeaderText{
+    font-size: 25;
+    margin-bottom: 0%;
+  }
+
+  .HeaderText2{
+    font-size: 25;
+  }
+
+  .HeaderText3{
+    font-size: 25;
+  }
+
+  .DescText{
+    font-size: 10;
+    line-height: 1.5;      /* jarak antar baris lebih renggang */
+    letter-spacing: 0.8px; /* jarak antar huruf tipis */
+  }
+
+  .DescText2{
+    font-size: 10;
+    line-height: 1.5;      /* jarak antar baris lebih renggang */
+    letter-spacing: 0.8px; /* jarak antar huruf tipis */
+    margin-top: 5%;
+  }
+
+  .Section3{
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .down1{
+    width: 100%;
+  }
+
+  .Card{
+    width: 150px;
+  }
+
+  .CardImage{
+    height: 110px;
+  }
+}

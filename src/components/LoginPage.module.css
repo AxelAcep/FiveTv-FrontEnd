@@ -1,0 +1,108 @@
+/* Warna utama */
+:root {
+  --color1: #AB23B3;
+  --color2: #CB88E4;
+  --color3: #D449D9;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--color1), var(--color2), var(--color3));
+  font-family: 'Inter', sans-serif;
+}
+
+.loginCard {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.loginCard:hover {
+  transform: translateY(-5px);
+}
+
+.logo {
+  margin-bottom: 1rem;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: var(--color1);
+  font-family: 'Inter', sans-serif; /* font Inter */
+  font-weight: 400;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color3);
+  box-shadow: 0 0 5px var(--color3);
+}
+
+.button {
+  padding: 0.75rem 1rem;
+  background: var(--color1);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background: var(--color3);
+}
+
+.logo {
+  width: 100px;
+  height: auto; /* otomatis menyesuaikan rasio */
+}
+
+.logoWrapper {
+  position: relative; /* wajib untuk Image fill */
+  width: 200px;       /* atur width sesuai keinginan */
+  height: 100px;
+  aspect-ratio: 1/1;
+  margin: 0 auto 0rem auto;
+}
+
+.message {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: red;
+  text-align: center;
+}
+
+
+@media (max-width: 480px) {
+  .loginCard {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}

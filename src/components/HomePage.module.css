@@ -1,0 +1,502 @@
+.section {
+  padding: 2rem 2rem;
+  margin: 0;
+}
+
+/* Search */
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.searchForm {
+  position: relative;
+  width: 80%;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  opacity: 0.6;
+}
+
+.searchInput {
+  padding: 0.8rem 1rem 0.8rem 3rem;
+  border-radius: 9999px;
+  border: none;
+  background: #33333300;
+  color: #000000;
+  border: solid 1px rgb(20, 20, 20);
+  font-size: 1rem;
+  box-sizing: border-box; /* FIX disini */
+  width: 100%;
+}
+
+/* Top 3 layout */
+.top3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.top3container{
+    width: 80%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 330px;
+}
+
+.bigCard {
+  min-height: 600px;
+}
+
+.cardImage {
+  object-fit: cover;
+  z-index: 1;
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 2;
+}
+
+.cardOverlay h2,
+.cardOverlay h3 {
+  margin: 0.3rem 0;
+}
+
+.tag {
+  display: inline;
+  padding: 0.6rem 0.8rem;
+  width: auto;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  max-width: fit-content;
+}
+
+.program {
+  background: #CB88E4; /* ungu */
+  color: white;
+}
+
+.article {
+  background: #AB23B3; /* pink */
+  color: white;
+}
+
+.date2 {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin: 4px;
+  margin-left: 18px;
+}
+
+.newest{
+    width: calc(100% + 5rem);
+    align-items: center;
+    justify-self: center;
+    background: linear-gradient(to right, #AB23B3, #D449D9, #CB88E4);
+}
+
+.newestContainer{
+    width: calc(80% - 5rem);
+    align-items: center;
+    justify-self: center;
+    margin-top: 4vw;
+    margin-bottom: 4vw;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white;
+  margin-bottom: 2vw;
+
+}
+
+.scrollRow {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+  justify-content: start;
+
+  /* biar lebih smooth */
+  -webkit-overflow-scrolling: touch; 
+  scroll-behavior: smooth;
+
+  /* opsional: sembunyikan scrollbar */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollRow::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.scrollRow::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 9999px;
+}
+
+.cardSmall {
+  flex: 0 0 320px; /* semua card sama lebar */
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column; /* biar gambar + konten stack */
+  font-family: 'Inter', sans-serif; /* font Inter */
+  text-decoration: none; /* hilangin underline */
+}
+
+.cardImageSmall {
+  width: 100%;
+  height: 240px; /* fix tinggi semua gambar */
+  object-fit: cover; /* potong biar isi rata */
+  display: block;
+}
+
+.cardContent {
+  padding: 1rem;
+  color: #000;
+  flex: 1; /* biar isi text rata bawah */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.date {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-bottom: 0.5rem;
+}
+
+.cardDeskripsi {
+  font-family: 'Inter', sans-serif; /* Font Inter */
+  font-size: 0.9rem;                /* sedikit lebih kecil dari judul */
+  line-height: 1.4;                 /* biar rapi */
+  color: #444;                      /* abu gelap elegan */
+  margin-top: 0.5rem;
+
+  /* Batas maksimum teks */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* tampilkan max 3 baris */
+  line-clamp: 3; /* standard property for compatibility */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /* opsional buat lebih estetik */
+  letter-spacing: 0.2px;
+}
+
+.card,
+.artikelCard,
+.cardSmall,
+.populerItem,
+.bigCard,
+.cardProgram {
+  transition: all 0.3s ease;
+}
+
+.card:hover,
+.cardProgram:hover,
+.artikelCard:hover,
+.populerItem:hover, 
+.cardSmall:hover,
+.bigCard:hover {
+  transform: scale(1.02);  /* sedikit membesar */
+  cursor: pointer;
+}
+
+.artikelHolder{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.artikelContainer{
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerText {
+  display: flex;
+  justify-content: start;
+  gap: 1vw;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.headerText h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.arrow {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #AB23B3;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Artikel kiri */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.artikelCard {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  text-decoration: none;
+  color: #000;
+}
+
+.artikelImage {
+  width: 200px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0; /* jangan sampai gambar mengecil saat teks panjang */
+}
+
+.artikelContent h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  
+  display: -webkit-box;       /* Aktifkan flexbox versi webkit */
+  -webkit-box-orient: vertical; /* Arah box vertikal */
+  -webkit-line-clamp: 3;       /* Maksimal 3 baris */
+  line-clamp: 3;               /* Standard property for compatibility */
+  overflow: hidden;            /* Sembunyikan teks yang lebih */
+  text-overflow: ellipsis;     /* Tambahkan ... */
+  word-wrap: break-word;       /* Wrap kata panjang */
+}
+
+
+.date {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* Berita Terpopuler */
+.rightColumn2 {
+  background: #f9f5ff;
+  padding: 1rem;
+  padding-bottom: 0;
+  border-radius: 12px;
+  max-height: 480px;
+  width: 240px;
+  justify-content: center;
+  align-items: center;
+}
+
+.populerTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.populerItem {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+.populerItem h4 {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.icon {
+  color: #AB23B3;
+  font-size: 1rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  margin-right: 0.5rem;
+}
+
+.rowCard {
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+}
+
+.programHolder{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4vw;
+    padding-bottom: 2vw;
+
+}
+
+.programContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    gap: 5vw;
+}
+
+.programLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;       /* jarak antar card */
+  width: 50%;
+}
+
+.cardProgram {
+  border-radius: 12px;
+  overflow: hidden;
+  height: 400px;
+  position: relative;
+}
+
+.programRight {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 1rem;       /* jarak antar card */
+  width: 50%;
+}
+
+.loadingWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh; /* cukup tinggi biar cakep */
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #e0c9f7; /* ungu muda */
+  border-top: 6px solid #6a0dad; /* ungu tua */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingText {
+  font-size: 18px;
+  font-weight: 500;
+  color: #6a0dad;
+}
+
+.headerText a{
+  text-decoration: none;
+}
+
+.resultGrid{
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .top3container {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .searchForm{
+    width: 100%;
+  }
+
+  .bigCard {
+    min-height: 300px;
+  }
+
+  .newestContainer{
+    width: 85%;
+    align-items: center;
+    justify-self: center;
+}
+
+  .container{
+    flex-direction: column;
+    gap: 10vw;
+}
+
+.artikelContainer{
+    width: 100%;
+}
+ 
+  .programContainer{
+    flex-direction: column-reverse;
+    gap: 10vw;
+    width: 100%;
+  }
+
+  .programLeft{
+    width: 100%;
+  }
+
+  .programRight{
+    width: 100%;
+  }
+}

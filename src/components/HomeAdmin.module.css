@@ -1,0 +1,249 @@
+.maincontainer{
+    display: flex;
+    position: relative;
+
+}
+.mainheader{
+    width: calc(94%);
+    border-bottom: solid 1px #EAEAEA;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+}
+
+.socials img {
+  transition: opacity 0.2s;
+}
+
+.socials img:hover {
+  opacity: 0.8;
+}
+
+.TextHeaderTwo{
+    font-family: 'Inter', sans-serif; /* font Inter */
+    font-weight: 400;
+    text-decoration: underline;
+    color: #D449D9;
+}
+
+.TextHeaderOne{
+    font-family: 'Inter', sans-serif; /* font Inter */
+    font-weight: 500;
+    font-size: large;
+}
+
+.Selectioncontainer {
+  display: inline-flex;
+  gap: 10px;
+  background: #EDEDED;
+  padding: 6px;
+  border-radius: 8px;
+  margin-left: 2vw;
+  margin-top: 1vw;
+}
+
+.option {
+  background: transparent;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+
+  /* tambahin animasi halus */
+  transition: all 0.25s ease-in-out;
+}
+
+.active {
+  background: #CB88E4; /* ungu */
+  color: white;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+
+.option:active {
+  transform: scale(0.95);
+}
+
+.statContainer{
+  display: flex;
+  flex-direction: row;
+  width: calc(100%-4vw);
+  margin-top: 1.5vw;
+  margin-left: 2vw ;
+  margin-right: 2vw;
+  justify-content: space-between;
+  align-items: center;
+  height: 6%;
+}
+
+.mainconten{
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  gap: 1.5rem;
+  width: calc(100%-4vw);
+  margin-top: 1vw;
+  margin-left: 2vw ;
+  margin-right: 2vw;
+}
+
+.date {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* Berita Terpopuler */
+.rightColumn2 {
+  background: #f9f5ff;
+  padding: 1rem;
+  padding-bottom: 0;
+  border-radius: 12px;
+  width: 240px;
+}
+
+.populerTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.populerItem {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+.populerItem h4 {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.icon {
+  color: #AB23B3;
+  font-size: 1rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  margin-right: 0.5rem;
+}
+
+.program {
+  background: #CB88E4; /* ungu */
+  color: white;
+}
+
+.article {
+  background: #AB23B3; /* pink */
+  color: white;
+}
+
+.rightContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  align-self: center;
+  justify-self: center;
+}
+
+.leftContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 846px) {
+  .socials {
+    gap: 8px;
+  }
+
+  .socials img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Responsif untuk tablet / mobile */
+@media (max-width: 992px) {
+  .statContainer {
+    width: calc(100%);
+    margin-left: 0;
+    margin-right: 0;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mainconten {
+    grid-template-columns: 1fr; /* stack jadi 1 kolom */
+  }
+
+  .rightContainer {
+    flex-direction: row; /* biar kolom kanan berjajar */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .rightColumn2 {
+    width: 100%; /* biar full di mobile */
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .mainheader {
+    gap: 0.5rem;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 90%;
+    background: linear-gradient(90deg, #AB23B3, #4A0F4D);
+  }
+
+  .TextHeaderOne{
+    color: white;
+    font-size: small;
+}
+
+  .TextHeaderTwo{
+    font-size: small;
+  }
+
+  .Selectioncontainer {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 1vw;
+  }
+
+  .statContainer {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rightContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .rightColumn2 {
+    width: 100%;
+  }
+}

@@ -1,0 +1,83 @@
+.card {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.07);
+  width: 18%; /* biar pas 4 card */
+  border: solid 1px #EDEDED;
+  min-width: 0;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5em;   /* relatif ke font-size parent */
+  height: 2.5em;
+  border-radius: 0.5rem;
+  margin-right: 0.8em;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.value {
+  font-size: 1.2rem; /* relatif */
+  font-weight: 400;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.label {
+  font-size: 0.9rem; /* relatif */
+  color: #555;
+  margin: 0;
+  font-weight: 300;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .card {
+    width: 18%;
+    padding: 0.7rem;
+  }
+  .value {
+    font-size: 1rem;
+  }
+  .label {
+    font-size: 0.8rem;
+  }
+  .iconWrapper {
+    width: 2.2em;
+    height: 2.2em;
+  }
+  .label {
+  font-size: 0.6rem; /* relatif */
+}
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .card {
+    width: 18%;
+    padding: 0.5rem;
+  }
+  .value {
+    font-size: 0.85rem;
+  }
+  .label {
+    font-size: 0.7rem;
+  }
+  .iconWrapper {
+    width: 1.8em;
+    height: 1.8em;
+  }
+    .label {
+  font-size: 0.3rem; /* relatif */
+}
+}

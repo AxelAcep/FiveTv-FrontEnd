@@ -1,0 +1,441 @@
+/* ConfigPage.module.css */
+
+.configContainer {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.configSection {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.sectionHeader {
+  background: linear-gradient(135deg, #AB23B3 0%, #4A0F4D 100%);
+  color: white;
+  padding: 20px 24px;
+  margin: 0;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.sectionSubtitle {
+  font-size: 14px;
+  opacity: 0.9;
+  margin: 4px 0 0 0;
+}
+
+.sectionContent {
+  padding: 24px;
+}
+
+/* Jenis Management Styles */
+.jenisContainer {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.jenisAddForm {
+  flex: 1;
+  min-width: 300px;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px dashed #dee2e6;
+}
+
+.jenisAddForm h3 {
+  margin: 0 0 16px 0;
+  color: #495057;
+  font-size: 18px;
+}
+
+.jenisInputGroup {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.jenisInput {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.jenisInput:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.jenisAddButton {
+  padding: 12px 24px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.jenisAddButton:hover:not(:disabled) {
+  background: #218838;
+  transform: translateY(-1px);
+}
+
+.jenisAddButton:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.jenisList {
+  flex: 1;
+  min-width: 300px;
+}
+
+.jenisListTitle {
+  margin: 0 0 16px 0;
+  color: #495057;
+  font-size: 18px;
+}
+
+.jenisItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.jenisItem {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 2px solid #bbdefb;
+}
+
+.jenisEmpty {
+  color: #6c757d;
+  font-style: italic;
+  text-align: center;
+  padding: 40px 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+/* Website Config Form Styles */
+.configForm {
+  display: grid;
+  gap: 24px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.formGridFull {
+  grid-column: 1 / -1;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formLabel {
+  font-weight: 600;
+  color: #495057;
+  font-size: 14px;
+}
+
+.formInput {
+  padding: 12px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.formTextarea {
+  padding: 12px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 100px;
+  transition: all 0.3s ease;
+}
+
+.formTextarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Image Upload Styles */
+.imageUploadContainer {
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  background: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.imageUploadContainer:hover {
+  border-color: #667eea;
+  background: #f8f9ff;
+}
+
+.imagePreview {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imageUploadButtons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.imageButton {
+  padding: 10px 20px;
+  border: 2px solid #dee2e6;
+  border-radius: 6px;
+  background: white;
+  color: #495057;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.imageButton:hover:not(:disabled) {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.imageButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.imageButtonPrimary {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.imageButtonPrimary:hover:not(:disabled) {
+  background: #5a6fd8;
+  border-color: #5a6fd8;
+}
+
+.imageButtonDanger {
+  background: #dc3545;
+  color: white;
+  border-color: #dc3545;
+}
+
+.imageButtonDanger:hover:not(:disabled) {
+  background: #c82333;
+  border-color: #c82333;
+}
+
+.hiddenFileInput {
+  display: none;
+}
+
+.imageHint {
+  font-size: 12px;
+  color: #6c757d;
+  margin-top: 8px;
+}
+
+/* Save Button Styles */
+.saveButtonContainer {
+  padding-top: 24px;
+  border-top: 2px solid #e9ecef;
+  text-align: center;
+}
+
+.saveButton {
+  padding: 16px 48px;
+  background: linear-gradient(135deg, #AB23B3 0%, #4A0F4D 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.saveButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+}
+
+.saveButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.saveButtonSpinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Loading States */
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.loadingContent {
+  text-align: center;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e9ecef;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 16px;
+}
+
+.loadingText {
+  color: #6c757d;
+  font-size: 16px;
+}
+
+/* Error States */
+.errorContainer {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #f5c6cb;
+  margin-bottom: 20px;
+}
+
+/* Success States */
+.successContainer {
+  background: #d4edda;
+  color: #155724;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #c3e6cb;
+  margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .configContainer {
+    padding: 12px;
+  }
+  
+  .jenisContainer {
+    flex-direction: column;
+  }
+  
+  .jenisInputGroup {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .jenisAddButton {
+    width: 100%;
+  }
+  
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .imageUploadButtons {
+    flex-direction: column;
+  }
+  
+  .imageButton {
+    width: 100%;
+  }
+  
+  .sectionHeader {
+    padding: 16px 20px;
+  }
+  
+  .sectionContent {
+    padding: 20px;
+  }
+  
+  .sectionTitle {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .configContainer {
+    padding: 8px;
+  }
+  
+  .sectionHeader {
+    padding: 12px 16px;
+  }
+  
+  .sectionContent {
+    padding: 16px;
+  }
+  
+  .saveButton {
+    width: 100%;
+    padding: 14px;
+  }
+}
