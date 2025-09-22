@@ -1,9 +1,4 @@
-/* Warna utama */
-:root {
-  --color1: #AB23B3;
-  --color2: #CB88E4;
-  --color3: #D449D9;
-}
+
 
 .container {
   display: flex;

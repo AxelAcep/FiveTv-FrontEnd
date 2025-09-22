@@ -3,3 +3,9 @@ body {
   margin: 0;
   font-family: sans-serif;
 }
+
+:root {
+  --color1: #AB23B3;
+  --color2: #CB88E4;
+  --color3: #D449D9;
+}
