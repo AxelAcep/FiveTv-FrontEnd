@@ -322,7 +322,7 @@ export default function ListArticlePage() {
                           className={styles.actionButton}
                           onClick={() => handleEditClick(article.id)}
                         >
-                          <Image src="/images/edit-icon.png" alt="Edit" width={16} height={16} />
+                          <Image src="/images/editicon.png" alt="Edit" width={16} height={16} />
                         </button>
                       </td>
                     </tr>

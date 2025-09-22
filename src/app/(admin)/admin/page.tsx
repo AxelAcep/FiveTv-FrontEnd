@@ -38,7 +38,7 @@ export default function LoginPage() {
       <div className={styles.loginCard}>
         <div className={styles.logoWrapper}>
           <Image
-            src="/images/Logo.png"
+            src="/images/logo.png"
             alt="Logo"
             fill
             style={{ objectFit: "contain" }}

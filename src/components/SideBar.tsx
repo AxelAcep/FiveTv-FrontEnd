@@ -71,7 +71,7 @@ export default function Sidebar() {
       <div className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}>
         <div className={styles.logoWrapper}>
           <Image 
-            src="/images/Logo.png" 
+            src="/images/logo.png" 
             alt="Logo" 
             fill 
             style={{ objectFit: "contain", margin: "auto" }} 
