@@ -1,5 +1,6 @@
 .Container {
   width: 100%;
+  zoom: 0.8; 
 }
 
 .noPaddingMain {
@@ -64,6 +65,7 @@
 
   line-height: 1.8;      /* jarak antar baris lebih renggang */
   letter-spacing: 0.5px; /* jarak antar huruf tipis */
+  white-space: pre-line; 
 }
 
 .Section2{

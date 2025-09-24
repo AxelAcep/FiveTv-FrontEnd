@@ -71,6 +71,7 @@ export default function Profile() {
             <h1 className={styles.HeaderText}> Misi </h1>
             <p
               className={styles.DescText}
+              style={{ textAlign: "center" }}
               dangerouslySetInnerHTML={{ __html: websiteConfig.misi }}
             />
           </div>
@@ -111,15 +112,6 @@ export default function Profile() {
                   <h3 className={styles.CardNama}>{p.nama}</h3>
 
                   <div className={styles.CardLinks}>
-                    {p.linkedin && (
-                      <a
-                        href={p.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <img src="/images/linkedin.png" alt="LinkedIn" />
-                      </a>
-                    )}
                     {p.Instagram && (
                       <a
                         href={p.Instagram}

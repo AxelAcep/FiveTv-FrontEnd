@@ -140,6 +140,16 @@ export default function EditWebsitePage() {
         // Ensure string values are properly set
         const configData = {
           ...response.data,
+            desc_satu: response.data.desc_satu || '',
+              desc_dua: response.data.desc_dua || '',
+              visi: response.data.visi || '',
+              misi: response.data.misi || '',
+              struktur: response.data.struktur || '',
+              instagram: response.data.instagram || '',
+              twitter: response.data.twitter || '',
+              youtube: response.data.youtube || '',
+              tiktok: response.data.tiktok || '',
+              linkedin: response.data.linkedin || '',
           kontenI_id: response.data.kontenI_id || '',
           kontenII_id: response.data.kontenII_id || '',
           kontenIII_id: response.data.kontenIII_id || '',
@@ -600,7 +610,7 @@ export default function EditWebsitePage() {
                     <div className={configStyles.formGroup}>
                       <label className={configStyles.formLabel}>Instagram</label>
                       <input
-                        type="url"
+                        type="text"
                         value={websiteConfig.instagram}
                         onChange={(e) => handleConfigChange('instagram', e.target.value)}
                         disabled={isSavingConfig}
@@ -612,7 +622,7 @@ export default function EditWebsitePage() {
                     <div className={configStyles.formGroup}>
                       <label className={configStyles.formLabel}>Twitter</label>
                       <input
-                        type="url"
+                        type="text"
                         value={websiteConfig.twitter}
                         onChange={(e) => handleConfigChange('twitter', e.target.value)}
                         disabled={isSavingConfig}
@@ -624,7 +634,7 @@ export default function EditWebsitePage() {
                     <div className={configStyles.formGroup}>
                       <label className={configStyles.formLabel}>YouTube</label>
                       <input
-                        type="url"
+                        type="text"
                         value={websiteConfig.youtube}
                         onChange={(e) => handleConfigChange('youtube', e.target.value)}
                         disabled={isSavingConfig}
@@ -636,7 +646,7 @@ export default function EditWebsitePage() {
                     <div className={configStyles.formGroup}>
                       <label className={configStyles.formLabel}>TikTok</label>
                       <input
-                        type="url"
+                        type="text"
                         value={websiteConfig.tiktok}
                         onChange={(e) => handleConfigChange('tiktok', e.target.value)}
                         disabled={isSavingConfig}
@@ -648,7 +658,7 @@ export default function EditWebsitePage() {
                     <div className={configStyles.formGroup}>
                       <label className={configStyles.formLabel}>LinkedIn</label>
                       <input
-                        type="url"
+                        type="text"
                         value={websiteConfig.linkedin}
                         onChange={(e) => handleConfigChange('linkedin', e.target.value)}
                         disabled={isSavingConfig}
