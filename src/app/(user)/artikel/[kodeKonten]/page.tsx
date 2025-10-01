@@ -106,6 +106,10 @@ export default function DetailArticle() {
           <span className={styles.infoItem}>
             Editor : <a href="#">{konten.Editor}</a>
           </span>
+          <span className={styles.separator}>|</span>
+          <span className={styles.infoItem}>
+            Views : <a href="#">{konten.view}</a>
+          </span>
         </div>
 
         {/* Share */}
