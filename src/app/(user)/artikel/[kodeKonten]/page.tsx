@@ -5,8 +5,9 @@ import { useParams } from "next/navigation";
 import styles from "../../../../components/DetailArtikelPage.module.css";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaWhatsapp, FaXTwitter, FaLink } from "react-icons/fa6";
-import { getDetailByKode } from "../../../../services/UserServices";
+import { getDetailByKode, getRekomenKonten } from "../../../../services/UserServices";
 import { DetailResponse, Konten } from "../../../../model/UserModel";
+import RecomendationCard from "../../../../components/Recomendation";
 
 export default function DetailArticle() {
   const params = useParams();
@@ -14,9 +15,11 @@ export default function DetailArticle() {
 
   const [data, setData] = useState<DetailResponse | null>(null);
   const [loading, setLoading] = useState(true);
+  const [rekomen, setRekomen] = useState<Konten | null>(null);
 
   useEffect(() => {
     if (!kodeKonten) return;
+
     const fetchData = async () => {
       try {
         const result = await getDetailByKode(kodeKonten);
@@ -27,23 +30,46 @@ export default function DetailArticle() {
         setLoading(false);
       }
     };
+
+    const fetchRekomen = async () => {
+      try {
+        const result = await getRekomenKonten();
+        setRekomen(result);
+      } catch (err) {
+        console.error("Error fetch rekomen:", err);
+      }
+    };
+
     fetchData();
+    fetchRekomen();
   }, [kodeKonten]);
 
-if (loading) {
-  return (
-    <div className={styles.loadingWrapper}>
-      <div className={styles.spinner}></div>
-      <div className={styles.loadingText}>Memuat data...</div>
-    </div>
-  );
-}
+  if (loading) {
+    return (
+      <div className={styles.loadingWrapper}>
+        <div className={styles.spinner}></div>
+        <div className={styles.loadingText}>Memuat data...</div>
+      </div>
+    );
+  }
 
   if (!data) {
     return <p className={styles.loading}>Data tidak ditemukan</p>;
   }
 
   const { konten, kontenTerpopuler, kontenTerbaru } = data;
+
+  // Dapatkan URL halaman sekarang secara dinamis, hanya di client side
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+
+  // Encode judul artikel sebagai teks share
+  const shareText = encodeURIComponent(konten.judul || 'Baca artikel menarik ini');
+
+  // URL share untuk WhatsApp
+  const whatsappShareUrl = `https://wa.me/?text=${shareText}%20${encodeURIComponent(currentUrl)}`;
+
+  // URL share untuk Twitter
+  const twitterShareUrl = `https://twitter.com/intent/tweet?text=${shareText}&url=${encodeURIComponent(currentUrl)}`;
 
   return (
     <section className={styles.noPaddingMain}>
@@ -85,9 +111,39 @@ if (loading) {
         {/* Share */}
         <div className={styles.infoRight}>
           <span>Bagikan :</span>
-          <FaWhatsapp className={styles.icon} />
-          <FaXTwitter className={styles.icon} />
-          <FaLink className={styles.icon} />
+          <a
+            href={whatsappShareUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Share on WhatsApp"
+            className={styles.icon}
+          >
+            <FaWhatsapp />
+          </a>
+          <a
+            href={twitterShareUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Share on Twitter"
+            className={styles.icon}
+          >
+            <FaXTwitter />
+          </a>
+          <button
+            onClick={() => {
+              if (navigator.clipboard) {
+                navigator.clipboard.writeText(currentUrl);
+                alert('Link telah disalin ke clipboard!');
+              } else {
+                alert('Fitur salin clipboard tidak tersedia di browser ini.');
+              }
+            }}
+            aria-label="Copy link"
+            className={styles.icon}
+            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+          >
+            <FaLink />
+          </button>
         </div>
       </div>
 
@@ -170,6 +226,16 @@ if (loading) {
             ))}
           </div>
         </div>
+
+        {/* 🔹 Rekomendasi Card */}
+        {rekomen && (
+          <RecomendationCard
+            imageUrl={rekomen.linkGambar || "/images/dummy.png"}
+            title={rekomen.judul}
+            description={rekomen.isiHTML}
+            kodeKonten={rekomen.kodeKonten}
+          />
+        )}
       </div>
     </section>
   );

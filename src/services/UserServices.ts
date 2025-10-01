@@ -137,3 +137,17 @@ export const searchKontenProgram = async (q: string): Promise<Konten[]> => {
     throw error;
   }
 };
+
+export const getRekomenKonten = async (): Promise<Konten> => {
+  try {
+    const response = await fetch(`${BASE_URL}/rekomen`);
+    if (!response.ok) {
+      throw new Error("Failed to fetch recommended konten");
+    }
+    const data: Konten = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error in getRekomenKonten:", error);
+    throw error;
+  }
+};
