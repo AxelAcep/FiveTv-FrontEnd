@@ -41,7 +41,8 @@
   display: grid;
   grid-template-columns: 80% 20%;
   align-items: start;
-  margin-top: 12px;
+  margin-top: 0.5em;
+  margin-bottom: 2em;
 }
 
 .infoLeft {
@@ -64,7 +65,7 @@
 .infoRight {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
   gap: 8px;
   font-size: 14px;
 }

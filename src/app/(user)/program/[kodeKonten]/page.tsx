@@ -75,8 +75,6 @@ export default function DetailArticle() {
   return (
     <section className={styles.noPaddingMain}>
       {/* Cover */}
-      <img className={styles.coverImage} src={konten.linkGambar || "/images/dummy.png"} alt={konten.judul} />
-      <p className={styles.caption}> {konten.caption} </p>
 
       {/* Judul */}
       <h1 className={styles.HeaderText}>{konten.judul}</h1>
@@ -148,6 +146,9 @@ export default function DetailArticle() {
           </button>
         </div>
       </div>
+
+            <img className={styles.coverImage} src={konten.linkGambar || "/images/dummy.png"} alt={konten.judul} />
+      <p className={styles.caption}> {konten.caption} </p>
 
       {/* Body */}
       <div className={styles.infoRow}>
