@@ -189,7 +189,7 @@ interface ProgramResponse {
                   <a key={item.kodeKonten} className={styles.populerItem} href={`/${item.kategori}/${item.kodeKonten}`}>
                     <span className={styles.icon}>✦</span>
                     <div>
-                      <h4>{item.judul}</h4>
+                      <h4 className={styles.titlesmallcard}>{item.judul}</h4>
                       <span className={`${styles.tag} ${getTagClass(item.kategori)}`}>{item.kategori}</span>
                       <span className={styles.date}>📅 {formatDate(item.tanggal)}</span>
                     </div>
@@ -202,7 +202,7 @@ interface ProgramResponse {
                   <a key={item.kodeKonten} className={styles.populerItem} href={`/${item.kategori}/${item.kodeKonten}`}>
                     <span className={styles.icon}>✦</span>
                     <div>
-                      <h4>{item.judul}</h4>
+                      <h4 className={styles.titlesmallcard}>{item.judul}</h4>
                       <span className={`${styles.tag} ${getTagClass(item.kategori)}`}>{item.kategori}</span>
                       <span className={styles.date}>📅 {formatDate(item.tanggal)}</span>
                     </div>

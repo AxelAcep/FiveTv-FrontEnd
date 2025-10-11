@@ -15,6 +15,7 @@ interface FormData {
   type: number;
   content: string;
   coverImage: File | null;
+  caption: string;
 }
 
 // Import the article service
@@ -34,7 +35,8 @@ export default function AddArticlePage() {
     category: 'artikel',
     type: 0, // Changed to 0 as default to represent no selection
     content: '',
-    coverImage: null
+    coverImage: null,
+    caption: '',
   });
 
   const router = useRouter();
@@ -196,7 +198,8 @@ export default function AddArticlePage() {
         category: 'artikel',
         type: 0,
         content: '',
-        coverImage: null
+        coverImage: null,
+        caption: '',
       });
       setImagePreview(null);
       if (editorRef.current) {
@@ -222,7 +225,8 @@ export default function AddArticlePage() {
         category: 'artikel',
         type: 0,
         content: '',
-        coverImage: null
+        coverImage: null,
+        caption: '',
       });
       setImagePreview(null);
       if (editorRef.current) {
@@ -275,18 +279,6 @@ export default function AddArticlePage() {
                 <div className={styles.metadataSection}>
                   <div className={styles.metadataRow}>
                     <div className={styles.inputGroup}>
-                      <label>📅</label>
-                      <input
-                        type="text"
-                        name="source"
-                        value={formData.source}
-                        onChange={handleInputChange}
-                        placeholder="Sumber: ----"
-                        className={styles.metadataInput}
-                        disabled={isLoading}
-                      />
-                    </div>
-                    <div className={styles.inputGroup}>
                       <label>Reporter:</label>
                       <input
                         type="text"
@@ -294,6 +286,18 @@ export default function AddArticlePage() {
                         value={formData.reporter}
                         onChange={handleInputChange}
                         placeholder="----"
+                        className={styles.metadataInput}
+                        disabled={isLoading}
+                      />
+                    </div>
+                    <div className={styles.inputGroup}>
+                      <label>Penulis</label>
+                      <input
+                        type="text"
+                        name="source"
+                        value={formData.source}
+                        onChange={handleInputChange}
+                        placeholder="Sumber: ----"
                         className={styles.metadataInput}
                         disabled={isLoading}
                       />
@@ -311,6 +315,29 @@ export default function AddArticlePage() {
                       />
                     </div>
                   </div>
+                </div>
+
+                <div className={styles.captionInputContainer} style={{ marginBottom: '10px' }}>
+                  <h2> Caption </h2>
+                  <textarea
+                    name="caption"
+                    value={formData.caption}
+                    onChange={handleInputChange}
+                    placeholder="caption"
+                    className={styles.captionTextarea}
+                    disabled={isLoading}
+                    rows={3} // Membuat area cukup besar
+                      style={{
+                          width: '100%',
+                          resize: 'vertical',
+                          padding: '8px',
+                          fontSize: '14px',
+                          borderRadius: '12px',
+                          border: '1px solid #ccc',
+                          outline: 'none',
+                          transition: 'border-color 0.3s ease'
+                        }}
+                  />
                 </div>
 
                 {/* Cover Image Upload */}

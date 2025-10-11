@@ -16,6 +16,7 @@ interface FormData {
   content: string;
   coverImage: File | null;
   currentImageUrl: string | null;
+  caption: string;
 }
 
 // Import the article services
@@ -43,7 +44,8 @@ export default function EditArticlePage() {
     type: 0,
     content: '',
     coverImage: null,
-    currentImageUrl: null
+    currentImageUrl: null,
+    caption: '',
   });
 
   const [socialLinks, setSocialLinks] = useState<{
@@ -123,7 +125,8 @@ export default function EditArticlePage() {
             type: article.jenisId || 0,
             content: article.isiHTML || '',
             coverImage: null,
-            currentImageUrl: article.linkGambar || null
+            currentImageUrl: article.linkGambar || null,
+            caption: article.caption || '',
           });
 
           // Set image preview to current image if exists
@@ -322,7 +325,8 @@ export default function EditArticlePage() {
         type: originalData.jenisId || 0,
         content: originalData.isiHTML || '',
         coverImage: null,
-        currentImageUrl: originalData.linkGambar || null
+        currentImageUrl: originalData.linkGambar || null,
+        caption: originalData.caption || '',
       });
 
       // Set image preview to original image
@@ -402,19 +406,7 @@ export default function EditArticlePage() {
                 {/* Metadata Section */}
                 <div className={styles.metadataSection}>
                   <div className={styles.metadataRow}>
-                    <div className={styles.inputGroup}>
-                      <label>📅</label>
-                      <input
-                        type="text"
-                        name="source"
-                        value={formData.source}
-                        onChange={handleInputChange}
-                        placeholder="Sumber: ----"
-                        className={styles.metadataInput}
-                        disabled={isLoading}
-                      />
-                    </div>
-                    <div className={styles.inputGroup}>
+                      <div className={styles.inputGroup}>
                       <label>Reporter:</label>
                       <input
                         type="text"
@@ -422,6 +414,18 @@ export default function EditArticlePage() {
                         value={formData.reporter}
                         onChange={handleInputChange}
                         placeholder="----"
+                        className={styles.metadataInput}
+                        disabled={isLoading}
+                      />
+                    </div>
+                    <div className={styles.inputGroup}>
+                      <label>Penulis</label>
+                      <input
+                        type="text"
+                        name="source"
+                        value={formData.source}
+                        onChange={handleInputChange}
+                        placeholder="Penulis: ----"
                         className={styles.metadataInput}
                         disabled={isLoading}
                       />
@@ -439,6 +443,29 @@ export default function EditArticlePage() {
                       />
                     </div>
                   </div>
+                </div>
+
+                <div className={styles.captionInputContainer} style={{ marginBottom: '10px' }}>
+                  <h2> Caption </h2>
+                  <textarea
+                    name="caption"
+                    value={formData.caption}
+                    onChange={handleInputChange}
+                    placeholder="caption"
+                    className={styles.captionTextarea}
+                    disabled={isLoading}
+                    rows={3} // Membuat area cukup besar
+                      style={{
+                          width: '100%',
+                          resize: 'vertical',
+                          padding: '8px',
+                          fontSize: '14px',
+                          borderRadius: '12px',
+                          border: '1px solid #ccc',
+                          outline: 'none',
+                          transition: 'border-color 0.3s ease'
+                        }}
+                  />
                 </div>
 
                 {/* Cover Image Upload */}

@@ -26,6 +26,7 @@ export interface Konten {
   tanggal: string; // Tanggal akan datang sebagai string dari API
   isiHTML: string;
   kategori: KategoriKonten;
+  caption: string;
 }
 
 export interface DashboardResponse {

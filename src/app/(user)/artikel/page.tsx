@@ -193,7 +193,7 @@ export default function ArticlePage() {
                     >
                       {artikelTerbaru[0].kategori}
                     </span>
-                    <h2>{artikelTerbaru[0].judul}</h2>
+                    <h2 className={styles.titlesmallcard}>{artikelTerbaru[0].judul}</h2>
                     <p className={styles.date}>
                       📅{" "}
                       {new Date(artikelTerbaru[0].tanggal)
@@ -228,7 +228,7 @@ export default function ArticlePage() {
                       >
                         {item.kategori}
                       </span>
-                      <h3>{item.judul}</h3>
+                      <h3 className={styles.titlesmallcard}>{item.judul}</h3>
                       <p className={styles.date}>
                         📅 {new Date(item.tanggal).toISOString().split("T")[0]}
                       </p>
@@ -273,7 +273,7 @@ export default function ArticlePage() {
                         className={styles.artikelImage}
                       />
                       <div className={styles.artikelContent}>
-                        <h3>{item.judul}</h3>
+                        <h3 className={styles.titlesmallcard}>{item.judul}</h3>
                         <p className={styles.date}>
                           📅{" "}
                           {new Date(item.tanggal)
@@ -310,7 +310,7 @@ export default function ArticlePage() {
                     >
                       <span className={styles.icon}>✦</span>
                       <div>
-                        <h4>{item.judul}</h4>
+                        <h4 className={styles.titlesmallcard}>{item.judul}</h4>
                         <span
                           className={`${styles.tag} ${
                             item.kategori === "program"
@@ -381,7 +381,7 @@ export default function ArticlePage() {
                             .split("T")[0]}
                         </p>
                       </div>
-                      <h3>{item.judul}</h3>
+                      <h3 className={styles.titlesmallcard}>{item.judul}</h3>
                       <p className={styles.cardDeskripsi}>
                         {item.isiHTML
                           .replace(/<[^>]+>/g, "")

@@ -11,6 +11,23 @@
   max-height: 600px;
 }
 
+.caption {
+  font-size: 14px;
+  color: #666;
+  margin-top: 1em;
+  font-style: italic;
+  text-align: justify;
+}
+
+.titlesmallcard{
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* tampilkan max 3 baris */
+  line-clamp: 2; /* standard property for compatibility */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .HeaderText{
   position: relative; /* biar z-index jalan */
   z-index: 1;         /* teks di atas overlay */
@@ -240,4 +257,17 @@
   .HeaderText{
     font-size: 25px;
   }
+
+  .rightColumn2{
+    margin: auto;
+  }
+
+  .rightArticle{
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  align-items: center;
+  justify-self: center; 
+  width: 100%; 
+}
 }

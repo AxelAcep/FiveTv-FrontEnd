@@ -14,6 +14,15 @@
     padding-right: 3%;
 }
 
+.titlesmallcard{
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* tampilkan max 3 baris */
+  line-clamp: 2; /* standard property for compatibility */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .socials {
   display: flex;
   gap: 16px;

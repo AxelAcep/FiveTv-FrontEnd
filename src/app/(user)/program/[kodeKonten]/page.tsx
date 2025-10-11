@@ -76,6 +76,7 @@ export default function DetailArticle() {
     <section className={styles.noPaddingMain}>
       {/* Cover */}
       <img className={styles.coverImage} src={konten.linkGambar || "/images/dummy.png"} alt={konten.judul} />
+      <p className={styles.caption}> {konten.caption} </p>
 
       {/* Judul */}
       <h1 className={styles.HeaderText}>{konten.judul}</h1>
@@ -93,15 +94,19 @@ export default function DetailArticle() {
           </span>
           <span className={styles.separator}>|</span>
           <span className={styles.infoItem}>
-            Sumber : <a href="#">FiveTv</a>
-          </span>
-          <span className={styles.separator}>|</span>
-          <span className={styles.infoItem}>
             Reporter : <a href="#">{konten.Reporter}</a>
           </span>
           <span className={styles.separator}>|</span>
           <span className={styles.infoItem}>
+            Penulis : <a href="#">{konten.penulis}</a>
+          </span>
+          <span className={styles.separator}>|</span>
+          <span className={styles.infoItem}>
             Editor : <a href="#">{konten.Editor}</a>
+          </span>
+          <span className={styles.separator}>|</span>
+           <span className={styles.infoItem}>
+            Views : <a href="#">{konten.view}</a>
           </span>
         </div>
 
@@ -159,7 +164,7 @@ export default function DetailArticle() {
               <a key={item.kodeKonten} className={styles.populerItem} href={`/artikel/${item.kodeKonten}`}>
                 <span className={styles.icon}>✦</span>
                 <div>
-                  <h4>{item.judul}</h4>
+                  <h4 className={styles.titlesmallcard}>{item.judul}</h4>
                   <span
                     className={`${styles.tag} ${
                       item.kategori === "program" ? styles.program : styles.article
@@ -187,7 +192,7 @@ export default function DetailArticle() {
               <a key={item.kodeKonten} className={styles.populerItem} href={`/artikel/${item.kodeKonten}`}>
                 <span className={styles.icon}>✦</span>
                 <div>
-                  <h4>{item.judul}</h4>
+                  <h4 className={styles.titlesmallcard}>{item.judul}</h4>
                   <span
                     className={`${styles.tag} ${
                       item.kategori === "program" ? styles.program : styles.article

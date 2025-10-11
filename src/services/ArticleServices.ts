@@ -18,6 +18,7 @@ export interface ArticleData {
   kategori: string;
   jenisId?: number | null;
   isiHTML: string;
+  caption?: string | null;
 }
 
 export interface CreateArticleResponse {
@@ -171,6 +172,7 @@ export const createArticleWithImage = async (
     type: number;
     content: string;
     coverImage: File | null;
+    caption: string;
   }
 ): Promise<CreateArticleResponse> => {
   try {
@@ -192,7 +194,8 @@ export const createArticleWithImage = async (
       linkGambar: linkGambar,
       kategori: formData.category, // Use the selected category (artikel/program)
       jenisId: formData.type, // Direct integer mapping
-      isiHTML: formData.content
+      isiHTML: formData.content,
+      caption: formData.caption || '',
     };
 
     // Step 3: Submit to your backend API
@@ -247,6 +250,7 @@ export interface KontenData {
   jenisId: number | null;
   jenis: { nama: string } | null;
   isiHTML: string;
+  caption: string | null;
 }
 
 export interface GetKontenResponse {
@@ -264,6 +268,7 @@ export interface UpdateArticleData {
   kategori?: string;
   jenisId?: number | null;
   isiHTML?: string;
+  caption?: string | null;
 }
 
 export interface UpdateArticleResponse {
@@ -346,6 +351,7 @@ export const updateArticleWithImage = async (
     content: string;
     coverImage: File | null;
     currentImageUrl?: string | null;
+    caption: string | null;
   }
 ): Promise<UpdateArticleResponse> => {
   try {
@@ -367,7 +373,8 @@ export const updateArticleWithImage = async (
       linkGambar: linkGambar,
       kategori: formData.category,
       jenisId: formData.type,
-      isiHTML: formData.content
+      isiHTML: formData.content,
+      caption: formData.caption,
     };
 
     // Step 3: Submit update to your backend API

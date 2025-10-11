@@ -169,6 +169,15 @@
   border-radius: 9999px;
 }
 
+.titlesmallcard{
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* tampilkan max 3 baris */
+  line-clamp: 2; /* standard property for compatibility */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .cardSmall {
   flex: 0 0 320px; /* semua card sama lebar */
   border-radius: 12px;
@@ -285,6 +294,8 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  max-width: 78%;
+  margin-right: 2%;
 }
 
 .artikelCard {
@@ -532,5 +543,14 @@
 
   .programRight{
     width: 100%;
+  }
+
+  .leftColumn {
+  max-width: 100%;
+  margin-right: 0%;
+}
+
+   .rightColumn2{
+    margin: auto;
   }
 }

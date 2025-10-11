@@ -151,7 +151,7 @@ export default function HomePage() {
                     >
                       {kontenTerbaru[0].kategori}
                     </span>
-                    <h2>{kontenTerbaru[0].judul}</h2>
+                    <h2 className={styles.titlesmallcard}>{kontenTerbaru[0].judul}</h2>
                     <p className={styles.date}>
                       📅 {formatDate(kontenTerbaru[0].tanggal)}
                     </p>
@@ -178,7 +178,7 @@ export default function HomePage() {
                       >
                         {item.kategori}
                       </span>
-                      <h3>{item.judul}</h3>
+                      <h3 className={styles.titlesmallcard}>{item.judul}</h3>
                       <p className={styles.date}>
                         📅 {formatDate(item.tanggal)}
                       </p>
@@ -231,7 +231,7 @@ export default function HomePage() {
                           📅 {formatDate(item.tanggal)}
                         </p>
                       </div>
-                      <h3>{item.judul}</h3>
+                      <h3 className={styles.titlesmallcard}>{item.judul}</h3>
                       <p className={styles.cardDeskripsi}>
                         {item.isiHTML.replace(/<[^>]+>/g, "").substring(0, 100)}
                         ...
@@ -302,7 +302,7 @@ export default function HomePage() {
                     >
                       <span className={styles.icon}>✦</span>
                       <div>
-                        <h4>{item.judul}</h4>
+                        <h4 className={styles.titlesmallcard}>{item.judul}</h4>
                         <span
                           className={`${styles.tag} ${getTagClass(
                             item.kategori
@@ -345,7 +345,7 @@ export default function HomePage() {
                         >
                           {item.kategori}
                         </span>
-                        <h2>{item.judul}</h2>
+                        <h2 className={styles.titlesmallcard}>{item.judul}</h2>
                         <p className={styles.date}>
                           📅 {formatDate(item.tanggal)}
                         </p>

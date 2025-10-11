@@ -80,6 +80,8 @@ export default function DetailArticle() {
         alt={konten.judul}
       />
 
+      <p className={styles.caption}> {konten.caption} </p>
+
       {/* Judul */}
       <h1 className={styles.HeaderText}>{konten.judul}</h1>
 
@@ -96,11 +98,11 @@ export default function DetailArticle() {
           </span>
           <span className={styles.separator}>|</span>
           <span className={styles.infoItem}>
-            Sumber : <a href="#">FiveTv</a>
+            Reporter : <a href="#">{konten.Reporter}</a>
           </span>
           <span className={styles.separator}>|</span>
           <span className={styles.infoItem}>
-            Reporter : <a href="#">{konten.Reporter}</a>
+            Penulis : <a href="#">FiveTv</a>
           </span>
           <span className={styles.separator}>|</span>
           <span className={styles.infoItem}>
@@ -173,7 +175,7 @@ export default function DetailArticle() {
               >
                 <span className={styles.icon}>✦</span>
                 <div>
-                  <h4>{item.judul}</h4>
+                  <h4 className={styles.titlesmallcard}>{item.judul}</h4>
                   <span
                     className={`${styles.tag} ${
                       item.kategori === "program"
@@ -207,7 +209,7 @@ export default function DetailArticle() {
               >
                 <span className={styles.icon}>✦</span>
                 <div>
-                  <h4>{item.judul}</h4>
+                  <h4 className={styles.titlesmallcard}>{item.judul}</h4>
                   <span
                     className={`${styles.tag} ${
                       item.kategori === "program"
