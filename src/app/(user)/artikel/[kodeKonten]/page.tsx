@@ -96,7 +96,7 @@ export default function DetailArticle() {
           </span>
           <span className={styles.separator}>|</span>
           <span className={styles.infoItem}>
-            Penulis : <a href="#">FiveTv</a>
+            Penulis : <a href="#"> {konten.penulis} </a>
           </span>
           <span className={styles.separator}>|</span>
           <span className={styles.infoItem}>
