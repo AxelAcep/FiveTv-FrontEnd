@@ -79,7 +79,7 @@ export default function Footer() {
           />
         </a>
         
-        <a 
+        {/* <a 
           href={socialLinks.twitter} 
           target={socialLinks.twitter !== "#" ? "_blank" : "_self"}
           rel={socialLinks.twitter !== "#" ? "noopener noreferrer" : ""}
@@ -91,7 +91,7 @@ export default function Footer() {
             width={28} 
             height={28} 
           />
-        </a>
+        </a> */}
         
         <a 
           href={socialLinks.youtube} 

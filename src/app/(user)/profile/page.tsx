@@ -82,7 +82,7 @@ export default function Profile() {
         </div>
 
         {/* Section 4 - Struktur */}
-        <div className={styles.Section4}>
+        {/* <div className={styles.Section4}>
           <h1 className={styles.HeaderText2}> Struktur Organisasi </h1>
           {websiteConfig.struktur && (
             <img
@@ -92,10 +92,10 @@ export default function Profile() {
               height="auto"
             />
           )}
-        </div>
+        </div> */}
 
         {/* Section 5 - Pengurus */}
-        <div className={styles.Section5}>
+        {/* <div className={styles.Section5}>
           <h1 className={styles.HeaderText3}> Kepengurusan </h1>
 
           <div className={styles.LoopColumn}>
@@ -126,7 +126,7 @@ export default function Profile() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </section>
     </main>
   );

@@ -61,7 +61,7 @@ export default function Header() {
           />
         </a>
         
-        <a 
+        {/* <a 
           href={socialLinks.twitter} 
           target={socialLinks.twitter !== "#" ? "_blank" : "_self"}
           rel={socialLinks.twitter !== "#" ? "noopener noreferrer" : ""}
@@ -73,7 +73,7 @@ export default function Header() {
             width={24} 
             height={24} 
           />
-        </a>
+        </a> */}
         
         <a 
           href={socialLinks.youtube} 

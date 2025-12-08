@@ -124,7 +124,7 @@ export default function ArticlePage() {
           />
           <input
             type="text"
-            placeholder="Cari artikel..."
+            placeholder="Cari Program..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className={styles.searchInput}
@@ -252,7 +252,7 @@ export default function ArticlePage() {
                     border: "1px solid #AB23B3",
                   }}
                 ></div>
-                <h1>Artikel</h1>
+                <h1>Program</h1>
                 <span className={styles.arrow}>→</span>
               </div>
 
@@ -301,7 +301,7 @@ export default function ArticlePage() {
 
                 {/* Kanan: Artikel Terpopuler */}
                 <div className={styles.rightColumn2}>
-                  <h2 className={styles.populerTitle}>Artikel Terpopuler</h2>
+                  <h2 className={styles.populerTitle}>Program Terpopuler</h2>
                   {artikelTerpopuler.map((item) => (
                     <a
                       key={item.kodeKonten}
@@ -337,7 +337,7 @@ export default function ArticlePage() {
           {/* Scroll Row */}
           <div className={styles.newest}>
             <div className={styles.newestContainer}>
-              <h1 className={styles.sectionTitle}>Artikel Terbaru</h1>
+              <h1 className={styles.sectionTitle}>Program Terbaru</h1>
               <div
                 className={styles.scrollRow}
                 ref={scrollRef}
