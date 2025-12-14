@@ -68,7 +68,7 @@ export default function Profile() {
         {/* Section 3 - Misi & Visi */}
         <div className={styles.Section3}>
           <div className={styles.down1}>
-            <h1 className={styles.HeaderText}> Misi </h1>
+            <h1 className={styles.HeaderText}> Visi </h1>
             <p
               className={styles.DescText}
               style={{ textAlign: "center" }}
@@ -76,8 +76,8 @@ export default function Profile() {
             />
           </div>
           <div className={styles.down1}>
-            <h1 className={styles.HeaderText}> Visi </h1>
-            <p className={styles.DescText}>{websiteConfig.visi}</p>
+            <h1 className={styles.HeaderText}> Misi </h1>
+            <p className={styles.DescText}>{websiteConfig.misi}</p>
           </div>
         </div>
 
