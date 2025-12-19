@@ -1,6 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FiveTV Frontend
+
+This is the frontend for the FiveTV application, built with Next.js and TypeScript. It provides the user interface for interacting with the FiveTV backend.
+
+## Table of Contents
+
+- [FiveTV Frontend](#fivetv-frontend)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Technologies](#technologies)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Configuration](#configuration)
+    - [Running the Development Server](#running-the-development-server)
+  - [Project Structure](#project-structure)
+  - [Environment Variables](#environment-variables)
+  - [API Services](#api-services)
+
+## Features
+
+- User-facing and Admin interfaces.
+- Content browsing (articles and programs).
+- Detailed content views.
+- Search functionality.
+- Admin dashboard for content management.
+- CRUD operations for articles, programs, and members.
+- Website configuration management for admins.
+
+## Technologies
+
+- **Next.js**: React framework for production.
+- **TypeScript**: Typed JavaScript for robust application development.
+- **React**: JavaScript library for building user interfaces.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+- **Supabase**: Used for image storage.
 
 ## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1.  Clone the repository:
+    ```bash
+    git clone <repository-url>
+    cd FiveTv-FrontEnd
+    ```
+
+2.  Install the dependencies:
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+### Configuration
+
+1.  Create a `.env.local` file in the root of the project and add the necessary environment variables. See the [Environment Variables](#environment-variables) section for more details.
+
+### Running the Development Server
 
 First, run the development server:
 
@@ -18,19 +79,48 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+The project follows the Next.js App Router structure.
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/                  # Application routes
+│   ├── (admin)/          # Admin-only routes
+│   └── (user)/           # Public user routes
+├── components/           # Reusable React components
+├── model/                # TypeScript interfaces and type definitions
+├── services/             # API service layer for backend communication
+└── tailwind.config.js    # Tailwind CSS configuration
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-   **`app/(admin)`**: Contains all pages related to the admin dashboard. These routes are protected and require authentication.
+-   **`app/(user)`**: Contains all publicly accessible pages for users, such as the homepage, articles, and programs.
+-   **`components`**: Shared components used across different pages (e.g., `Header`, `Footer`, `Sidebar`).
+-   **`model`**: Defines the TypeScript types for data structures used throughout the application (e.g., `UserModel`, `AdminModel`).
+-   **`services`**: Handles all communication with the backend API. Each service file corresponds to a specific domain (e.g., `AdminServices`, `ArticleServices`).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Environment Variables
 
-## Deploy on Vercel
+Create a `.env.local` file in the root of your project with the following variables:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```env
+# URL of your backend API
+NEXT_PUBLIC_API_BASE_URL=http://localhost:5500
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Supabase credentials for file storage
+NEXT_PUBLIC_SUPABASE_URL="YOUR_SUPABASE_URL"
+NEXT_PUBLIC_SUPABASE_ANON_KEY="YOUR_SUPABASE_ANON_KEY"
+NEXT_PUBLIC_SUPABASE_SERVICE_KEY="YOUR_SUPABASE_SERVICE_ROLE_KEY"
+NEXT_PUBLIC_SUPABASE_BUCKET_NAME="FiveTv"
+```
+
+## API Services
+
+The `src/services` directory contains modules responsible for making API calls to the backend.
+
+-   **`AdminServices.ts`**: Handles admin login, dashboard data, and content management.
+-   **`ArticleServices.ts`**: Manages CRUD operations for articles, including image uploads to Supabase.
+-   **`ConfigServices.ts`**: Manages website configuration settings.
+-   **`MemberSercives.ts`**: Manages CRUD operations for "pengurus" (members/staff).
+-   **`UserServices.ts`**: Fetches data for public-facing pages like the dashboard, articles, and programs.
